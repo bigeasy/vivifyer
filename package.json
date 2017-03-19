@@ -1,0 +1,33 @@
+{
+    "name":                 "vivifyer",
+    "version":              "0.0.0",
+    "description":
+
+      "A map that creates a default object if one does not exist.",
+
+    "keywords":
+    [
+                            "comparator", "sort"
+    ],
+    "author":               "Alan Gutierrez <alan@prettyrobots.com>",
+    "homepage":             "https://github.com/bigeasy/vivifyer",
+    "bugs":                 "https://github.com/bigeasy/vivifyer/issues",
+    "license":              "MIT",
+    "repository":
+    {
+                            "type": "git",
+                            "url": "http://github.com/bigeasy/vivifyer.git"
+    },
+    "dependencies":
+    {
+    },
+    "devDependencies":
+    {
+                            "proof":                        "1.2.x"
+    },
+    "main":                 "vivifyer",
+    "scripts":
+    {
+                            "test": "proof platform win32 && proof test */*.t.js || t/test"
+    }
+}
