@@ -16,7 +16,7 @@
     "repository":
     {
                             "type": "git",
-                            "url": "http://github.com/bigeasy/vivifyer.git"
+                            "url": "bigeasy/vivifyer"
     },
     "dependencies":
     {
