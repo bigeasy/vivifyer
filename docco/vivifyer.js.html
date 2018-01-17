@@ -30,6 +30,32 @@
 
             </div>
 
+            <div class="content"><div class='highlight'><pre><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Vivifyer</span> (<span class="hljs-params">constructor</span>) </span>{
+    <span class="hljs-keyword">this</span>._constructor = <span class="hljs-keyword">constructor</span>
+    this.map = {}
+}
+
+Vivifyer.prototype._vivify = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">key</span>) </span>{
+    <span class="hljs-keyword">if</span> (!(key <span class="hljs-keyword">in</span> <span class="hljs-keyword">this</span>.map)) {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.map[key] = <span class="hljs-keyword">this</span>._constructor.call(<span class="hljs-literal">null</span>, key)
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.map[key]
+}
+
+Vivifyer.prototype.get = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">key</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>._vivify(key)
+}
+
+Vivifyer.prototype.remove = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">key</span>) </span>{
+    <span class="hljs-keyword">var</span> value = <span class="hljs-keyword">this</span>.map[key]
+    <span class="hljs-keyword">delete</span> <span class="hljs-keyword">this</span>.map[key]
+    <span class="hljs-keyword">return</span> value
+}
+
+<span class="hljs-built_in">module</span>.exports = Vivifyer
+
+</pre></div></div>
+
         </li>
 
     </ul>
