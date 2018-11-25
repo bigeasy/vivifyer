@@ -1,15 +1,15 @@
 require('proof')(6, prove)
 
-function prove (assert) {
+function prove (okay) {
     var Vivifyer = require('..')
     var counter = 0
     var vivifyer = new Vivifyer(function (key) {
-        assert(key == 'x', 'constructor')
+        okay(key == 'x', 'constructor')
         return counter++
     })
-    assert(Vivifyer, 'required')
-    assert(vivifyer.get('x'), 0, 'get')
-    assert(vivifyer.get('x'), 0, 'get exists')
-    assert(vivifyer.remove('x'), 0, 'remove')
-    assert(!('x' in vivifyer.map), 'map')
+    okay(Vivifyer, 'required')
+    okay(vivifyer.get('x'), 0, 'get')
+    okay(vivifyer.get('x'), 0, 'get exists')
+    okay(vivifyer.remove('x'), 0, 'remove')
+    okay(!('x' in vivifyer.map), 'map')
 }
