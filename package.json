@@ -1,6 +1,6 @@
 {
     "name":                 "vivifyer",
-    "version":              "2.0.2",
+    "version":              "2.0.3",
     "description":
 
       "A map that creates a default object if one does not exist.",
