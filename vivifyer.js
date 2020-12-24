@@ -11,8 +11,11 @@ class Vivifyer {
         return this.map[key]
     }
 
-    get (key) {
-        return this._vivify(key)
+    get (key, ...vargs) {
+        if (!(key in this.map)) {
+            return this.map[key] = this._constructor.apply(null, [ key ].concat(vargs))
+        }
+        return this.map[key]
     }
 
     remove (key) {
